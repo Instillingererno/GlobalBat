@@ -1,0 +1,13 @@
+@echo off
+
+echo Har du husket å kjøre som admin?
+
+echo Bytter til Java9 miljøet
+
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v JAVA_HOME /t REG_SZ /d "C:\Program Files\Java\jdk-9" /f
+
+REG ADD "HKCU\Enviroment" /v JAVA_HOME /t REG_SZ /d "C:\Program Files\Java\jdk-9" /f
+
+echo Ferdig med byttet, initierer en restart
+
+shutdown -r -c "Git gud" -t 5
